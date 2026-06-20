@@ -61,7 +61,7 @@ export function Hero3DStage() {
                 transition={{ duration: 0.6 }}
                 className="text-4xl md:text-5xl lg:text-[56px] font-medium text-white leading-[1.1] text-balance"
               >
-                Orbit - инструмент для планирования и создания продуктов
+                Импульс — тренировки управляемых состояний
               </motion.h1>
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
@@ -69,9 +69,9 @@ export function Hero3DStage() {
                 transition={{ duration: 0.6, delay: 0.1 }}
                 className="mt-6 text-lg text-zinc-400"
               >
-                Система для современной разработки.
+                Осознанная работа с психической энергией.
                 <br />
-                Управляйте задачами, проектами и дорожными картами.
+                Учитесь входить в нужное состояние и управлять собой.
               </motion.p>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -79,13 +79,13 @@ export function Hero3DStage() {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="mt-8 flex items-center gap-6"
               >
-                <button className="px-5 py-2.5 bg-white text-zinc-900 font-medium rounded-lg hover:bg-zinc-100 transition-colors text-sm">
-                  Начать работу
-                </button>
-                <button className="text-zinc-300 font-medium hover:text-white transition-colors flex items-center gap-2 text-sm">
-                  <span className="text-zinc-500">Новинка:</span> Orbit-агент для Slack
+                <a href="#contacts" className="px-5 py-2.5 bg-white text-zinc-900 font-medium rounded-lg hover:bg-zinc-100 transition-colors text-sm">
+                  Записаться на занятие
+                </a>
+                <a href="#about" className="text-zinc-300 font-medium hover:text-white transition-colors flex items-center gap-2 text-sm">
+                  Что такое управляемые состояния
                   <span aria-hidden="true">→</span>
-                </button>
+                </a>
               </motion.div>
             </div>
           </div>
@@ -160,11 +160,16 @@ export function Hero3DStage() {
           </div>
 
           <LogoCloud />
+          <div id="about" />
           <FeatureCardsSection />
+          <div id="states" />
           <AISection />
+          <div id="schedule" />
           <ProductDirectionSection />
+          <div id="price" />
           <WorkflowsSection />
           <CTASection />
+          <div id="contacts" />
           <Footer />
         </div>
       </section>

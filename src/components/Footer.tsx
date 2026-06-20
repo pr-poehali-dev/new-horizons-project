@@ -1,45 +1,81 @@
-export function Footer() {
-  const footerLinks = {
-    "Возможности": ["Планирование", "Разработка", "Аналитика", "Запросы клиентов", "Orbit Asks", "Безопасность", "Мобильное приложение"],
-    "Продукт": ["Тарифы", "Методология", "Интеграции", "История изменений", "Документация", "Скачать", "Перейти на Orbit"],
-    "Компания": ["О нас", "Клиенты", "Карьера", "Новости", "README", "Качество", "Бренд"],
-    "Ресурсы": ["Разработчикам", "Статус", "Стартапам", "Сообщить об уязвимости", "DPA", "Конфиденциальность", "Условия"],
-    "Связаться": ["Контакты", "Сообщество", "X (Twitter)", "GitHub", "YouTube"],
-  }
+import Icon from "@/components/ui/icon"
 
+export function Footer() {
   return (
     <footer className="border-t border-zinc-800 py-16 px-6" style={{ backgroundColor: "#09090B" }}>
       <div className="max-w-6xl mx-auto">
-        <div className="grid grid-cols-2 md:grid-cols-6 gap-8">
-          {/* Logo */}
-          <div className="col-span-2 md:col-span-1">
-            <svg width="20" height="20" viewBox="0 0 100 100" fill="none" className="text-white">
-              <path
-                d="M20 30 L50 10 L80 30 L80 70 L50 90 L20 70 Z"
-                fill="currentColor"
-                stroke="currentColor"
-                strokeWidth="2"
-              />
-              <path d="M50 10 L50 50 L20 30" fill="#09090B" />
-              <path d="M50 50 L80 70 L50 90" fill="#09090B" />
-            </svg>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+          {/* Brand + socials */}
+          <div>
+            <div className="flex items-center gap-2 mb-4">
+              <Icon name="Zap" className="w-5 h-5 text-white" />
+              <span className="text-white font-semibold">Импульс</span>
+            </div>
+            <p className="text-zinc-500 text-sm leading-relaxed mb-5 max-w-xs">
+              Тренировки управляемых состояний и работа с психической энергией.
+            </p>
+            <div className="flex items-center gap-3">
+              <a
+                href="https://vk.ru/in_impuls"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-9 h-9 rounded-lg border border-zinc-700 flex items-center justify-center text-zinc-400 hover:text-white hover:border-zinc-500 transition-colors"
+                aria-label="ВКонтакте"
+              >
+                <Icon name="Share2" className="w-4 h-4" />
+              </a>
+            </div>
           </div>
 
-          {/* Links */}
-          {Object.entries(footerLinks).map(([category, links]) => (
-            <div key={category}>
-              <h3 className="text-white font-medium text-sm mb-4">{category}</h3>
-              <ul className="space-y-3">
-                {links.map((link) => (
-                  <li key={link}>
-                    <a href="#" className="text-zinc-500 hover:text-zinc-300 transition-colors text-sm">
-                      {link}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+          {/* Contacts */}
+          <div>
+            <h3 className="text-white font-medium text-sm mb-4">Контакты</h3>
+            <ul className="space-y-3 text-sm">
+              <li className="flex items-start gap-2.5 text-zinc-500">
+                <Icon name="MapPin" className="w-4 h-4 mt-0.5 flex-shrink-0" />
+                Адрес уточняется
+              </li>
+              <li className="flex items-start gap-2.5 text-zinc-500">
+                <Icon name="Phone" className="w-4 h-4 mt-0.5 flex-shrink-0" />
+                Телефон уточняется
+              </li>
+              <li>
+                <a
+                  href="https://vk.ru/in_impuls"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-start gap-2.5 text-zinc-500 hover:text-zinc-300 transition-colors"
+                >
+                  <Icon name="Send" className="w-4 h-4 mt-0.5 flex-shrink-0" />
+                  Написать в группе ВК
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Navigation */}
+          <div>
+            <h3 className="text-white font-medium text-sm mb-4">Разделы</h3>
+            <ul className="space-y-3 text-sm">
+              {[
+                { label: "О проекте", href: "#about" },
+                { label: "Базовые состояния", href: "#states" },
+                { label: "Расписание", href: "#schedule" },
+                { label: "Стоимость", href: "#price" },
+                { label: "Записаться", href: "#contacts" },
+              ].map((link) => (
+                <li key={link.label}>
+                  <a href={link.href} className="text-zinc-500 hover:text-zinc-300 transition-colors">
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        <div className="border-t border-zinc-800 mt-12 pt-8 text-zinc-600 text-sm">
+          © {new Date().getFullYear()} Импульс — тренировки управляемых состояний
         </div>
       </div>
     </footer>
